@@ -1,455 +1,450 @@
-/* =====================================================
-   TradeVision Pro — Datos de Ejemplo
-   ===================================================== */
+// =============================================================================
+// DATA.JS — Datos de mercado precargados para TradeVision Pro
+// =============================================================================
 
-// ---- Watchlist de acciones ----
-const WATCHLIST = [
-  { symbol: 'AAPL', name: 'Apple Inc.', sector: 'Tecnología', exchange: 'NASDAQ', price: 185.50, change: 2.30, changePct: 1.26, volume: 58_200_000, mktCap: '2.89T', pe: 30.2, eps: 6.14, dividend: 0.96, high52: 198.23, low52: 164.08, beta: 1.28 },
-  { symbol: 'MSFT', name: 'Microsoft Corp.', sector: 'Tecnología', exchange: 'NASDAQ', price: 378.92, change: -1.45, changePct: -0.38, volume: 22_100_000, mktCap: '2.81T', pe: 36.5, eps: 10.38, dividend: 3.00, high52: 420.82, low52: 310.21, beta: 0.92 },
-  { symbol: 'GOOGL', name: 'Alphabet Inc.', sector: 'Tecnología', exchange: 'NASDAQ', price: 140.25, change: 1.12, changePct: 0.81, volume: 18_500_000, mktCap: '1.75T', pe: 25.3, eps: 5.54, dividend: 0, high52: 153.78, low52: 102.21, beta: 1.06 },
-  { symbol: 'AMZN', name: 'Amazon.com Inc.', sector: 'Consumo', exchange: 'NASDAQ', price: 178.35, change: 3.21, changePct: 1.83, volume: 41_300_000, mktCap: '1.85T', pe: 59.1, eps: 3.02, dividend: 0, high52: 201.20, low52: 118.35, beta: 1.18 },
-  { symbol: 'NVDA', name: 'NVIDIA Corp.', sector: 'Semiconductores', exchange: 'NASDAQ', price: 495.28, change: 12.40, changePct: 2.57, volume: 47_600_000, mktCap: '1.22T', pe: 65.8, eps: 7.53, dividend: 0.16, high52: 505.48, low52: 180.96, beta: 1.72 },
-  { symbol: 'META', name: 'Meta Platforms', sector: 'Tecnología', exchange: 'NASDAQ', price: 352.18, change: -5.62, changePct: -1.57, volume: 16_900_000, mktCap: '908B', pe: 23.1, eps: 15.25, dividend: 0, high52: 384.33, low52: 197.16, beta: 1.32 },
-  { symbol: 'TSLA', name: 'Tesla Inc.', sector: 'Automotriz', exchange: 'NASDAQ', price: 245.01, change: -8.34, changePct: -3.29, volume: 123_400_000, mktCap: '780B', pe: 75.4, eps: 3.25, dividend: 0, high52: 299.29, low52: 138.80, beta: 2.01 },
-  { symbol: 'JPM',  name: 'JPMorgan Chase', sector: 'Finanzas', exchange: 'NYSE', price: 198.44, change: 0.87, changePct: 0.44, volume: 9_800_000, mktCap: '580B', pe: 11.2, eps: 17.71, dividend: 4.60, high52: 207.08, low52: 135.19, beta: 1.05 },
-  { symbol: 'JNJ',  name: 'Johnson & Johnson', sector: 'Salud', exchange: 'NYSE', price: 152.30, change: -0.45, changePct: -0.29, volume: 7_200_000, mktCap: '366B', pe: 15.8, eps: 9.64, dividend: 4.76, high52: 175.97, low52: 143.14, beta: 0.54 },
-  { symbol: 'KO',   name: 'Coca-Cola Co.', sector: 'Consumo', exchange: 'NYSE', price: 58.92, change: 0.23, changePct: 0.39, volume: 14_100_000, mktCap: '254B', pe: 22.4, eps: 2.63, dividend: 1.84, high52: 64.99, low52: 53.69, beta: 0.60 },
-];
+const STOCKS = {
+    AAPL: {
+        name: "Apple Inc.",
+        sector: "Tecnología",
+        marketCap: "2.85T",
+        description: "Apple diseña y vende iPhone, Mac, iPad y servicios digitales. Es la empresa más valiosa del mundo.",
+        news: [
+            { headline: "Apple supera expectativas en ventas de iPhone", sentiment: "positive", time: "Hace 2h" },
+            { headline: "Nuevo lanzamiento de Vision Pro genera expectativa", sentiment: "positive", time: "Hace 5h" },
+            { headline: "Analistas prevén crecimiento en servicios de App Store", sentiment: "neutral", time: "Hace 1d" }
+        ]
+    },
+    MSFT: {
+        name: "Microsoft Corp.",
+        sector: "Tecnología",
+        marketCap: "3.10T",
+        description: "Microsoft crea Windows, Office y Azure. Es líder en nube empresarial e inteligencia artificial.",
+        news: [
+            { headline: "Azure crece un 28% en el último trimestre", sentiment: "positive", time: "Hace 1h" },
+            { headline: "Copilot AI integrado en más productos Office", sentiment: "positive", time: "Hace 3h" },
+            { headline: "Microsoft invierte $10B más en OpenAI", sentiment: "neutral", time: "Hace 1d" }
+        ]
+    },
+    GOOGL: {
+        name: "Alphabet Inc.",
+        sector: "Tecnología",
+        marketCap: "2.10T",
+        description: "Alphabet es la empresa madre de Google. Sus ingresos provienen principalmente de publicidad digital.",
+        news: [
+            { headline: "Google Search sigue dominando con 91% del mercado", sentiment: "positive", time: "Hace 4h" },
+            { headline: "Gemini AI supera a competidores en benchmarks", sentiment: "positive", time: "Hace 6h" },
+            { headline: "Reguladores europeos investigan prácticas de anuncios", sentiment: "negative", time: "Hace 2d" }
+        ]
+    },
+    AMZN: {
+        name: "Amazon.com Inc.",
+        sector: "Consumo / Tech",
+        marketCap: "1.90T",
+        description: "Amazon es el mayor retailer online del mundo y su nube AWS es líder del mercado cloud.",
+        news: [
+            { headline: "AWS registra máximos históricos de ingresos", sentiment: "positive", time: "Hace 3h" },
+            { headline: "Prime Day bate récord de ventas global", sentiment: "positive", time: "Hace 8h" },
+            { headline: "Amazon abre más centros logísticos en Latinoamérica", sentiment: "neutral", time: "Hace 1d" }
+        ]
+    },
+    NVDA: {
+        name: "NVIDIA Corp.",
+        sector: "Semiconductores",
+        marketCap: "2.40T",
+        description: "NVIDIA fabrica las GPUs más potentes del mundo, usadas en IA, videojuegos y centros de datos.",
+        news: [
+            { headline: "NVDA sube 8% tras resultados récord en chips IA", sentiment: "positive", time: "Hace 1h" },
+            { headline: "Blackwell GPU supera a H100 en rendimiento", sentiment: "positive", time: "Hace 5h" },
+            { headline: "Demanda de data centers supera capacidad de producción", sentiment: "positive", time: "Hace 1d" }
+        ]
+    },
+    META: {
+        name: "Meta Platforms",
+        sector: "Redes Sociales",
+        marketCap: "1.35T",
+        description: "Meta opera Facebook, Instagram y WhatsApp, con más de 3 mil millones de usuarios activos.",
+        news: [
+            { headline: "Ingresos publicitarios de Meta crecen 25% YoY", sentiment: "positive", time: "Hace 2h" },
+            { headline: "Meta AI llega a todos los productos de la empresa", sentiment: "positive", time: "Hace 6h" },
+            { headline: "Costos del metaverso siguen siendo un reto", sentiment: "negative", time: "Hace 2d" }
+        ]
+    },
+    TSLA: {
+        name: "Tesla Inc.",
+        sector: "Automotriz / EV",
+        marketCap: "750B",
+        description: "Tesla fabrica vehículos eléctricos y sistemas de energía. Es pionera en conducción autónoma.",
+        news: [
+            { headline: "Tesla entrega un millón de vehículos en el trimestre", sentiment: "positive", time: "Hace 3h" },
+            { headline: "Cybertruck inicia entregas masivas en Europa", sentiment: "positive", time: "Hace 7h" },
+            { headline: "Elon Musk vende acciones por valor de $2B", sentiment: "negative", time: "Hace 1d" }
+        ]
+    },
+    JPM: {
+        name: "JPMorgan Chase",
+        sector: "Banca",
+        marketCap: "560B",
+        description: "JPMorgan es el banco más grande de EE.UU. con servicios de banca comercial, inversión y gestión de activos.",
+        news: [
+            { headline: "JPM reporta ganancias récord en banca de inversión", sentiment: "positive", time: "Hace 4h" },
+            { headline: "Jamie Dimon alerta sobre riesgos de inflación persistente", sentiment: "negative", time: "Hace 8h" },
+            { headline: "JPM expande operaciones en mercados emergentes", sentiment: "neutral", time: "Hace 2d" }
+        ]
+    },
+    JNJ: {
+        name: "Johnson & Johnson",
+        sector: "Salud",
+        marketCap: "430B",
+        description: "J&J es líder farmacéutico y de dispositivos médicos con más de 135 años de historia.",
+        news: [
+            { headline: "J&J obtiene aprobación FDA para nuevo tratamiento oncológico", sentiment: "positive", time: "Hace 5h" },
+            { headline: "Ventas de dispositivos médicos superan estimaciones", sentiment: "positive", time: "Hace 9h" },
+            { headline: "J&J llega a acuerdo de $700M en litigios de talco", sentiment: "neutral", time: "Hace 3d" }
+        ]
+    },
+    KO: {
+        name: "The Coca-Cola Co.",
+        sector: "Consumo Básico",
+        marketCap: "265B",
+        description: "Coca-Cola es la marca de bebidas más reconocida del mundo con presencia en más de 200 países.",
+        news: [
+            { headline: "Coca-Cola eleva guía de ingresos anuales", sentiment: "positive", time: "Hace 6h" },
+            { headline: "KO pagará dividendo trimestral de $0.485", sentiment: "positive", time: "Hace 1d" },
+            { headline: "Ventas en mercados emergentes de Asia impulsan crecimiento", sentiment: "neutral", time: "Hace 2d" }
+        ]
+    }
+};
 
-// ---- Generador de velas japonesas realistas ----
-function generateCandleData(basePrice, count, volatility = 0.025, trend = 0.0003) {
-  const candles = [];
-  let price = basePrice;
-  const now = Math.floor(Date.now() / 1000);
-  const daySeconds = 86400;
+// Precios base por activo
+const BASE_PRICES = {
+    AAPL: 175.50, MSFT: 378.20, GOOGL: 141.80, AMZN: 186.40,
+    NVDA: 482.30, META: 487.60, TSLA: 248.50, JPM: 197.80,
+    JNJ: 158.90, KO: 62.40
+};
 
-  for (let i = count; i >= 0; i--) {
-    const date = now - i * daySeconds;
-    const drift = (Math.random() - 0.48) * volatility + trend;
-    const open = price;
-    const close = open * (1 + drift);
-    const amplitude = Math.abs(drift) + Math.random() * volatility * 0.8;
-    const high = Math.max(open, close) * (1 + amplitude * 0.5);
-    const low  = Math.min(open, close) * (1 - amplitude * 0.5);
-    const vol  = Math.floor(5_000_000 + Math.random() * 80_000_000);
+// Genera datos OHLCV para un período dado
+function generateOHLCV(symbol, periods, intervalMinutes = 30) {
+    const basePrice = BASE_PRICES[symbol];
+    const data = [];
+    const now = new Date();
+    now.setMinutes(0, 0, 0);
 
-    candles.push({
-      time: date,
-      open:  parseFloat(open.toFixed(2)),
-      high:  parseFloat(high.toFixed(2)),
-      low:   parseFloat(low.toFixed(2)),
-      close: parseFloat(close.toFixed(2)),
-      volume: vol
-    });
+    let price = basePrice * (0.85 + Math.random() * 0.15);
+    const volatility = symbol === 'TSLA' ? 0.025 : symbol === 'NVDA' ? 0.022 :
+                       symbol === 'MSFT' ? 0.012 : 0.015;
 
-    price = close;
-  }
-  return candles;
+    for (let i = periods; i >= 0; i--) {
+        const date = new Date(now.getTime() - i * intervalMinutes * 60 * 1000);
+        const trend = Math.sin(i / (periods * 0.3)) * 0.008;
+        const change = (Math.random() - 0.48 + trend) * volatility * price;
+
+        const open = price;
+        price = Math.max(price + change, price * 0.5);
+        const close = price;
+        const high = Math.max(open, close) * (1 + Math.random() * volatility * 0.5);
+        const low = Math.min(open, close) * (1 - Math.random() * volatility * 0.5);
+        const baseVol = symbol === 'AAPL' ? 65000000 : symbol === 'TSLA' ? 85000000 : 30000000;
+        const volume = Math.floor(baseVol * (0.4 + Math.random() * 1.2));
+
+        data.push({ date, open, high, low, close, volume });
+    }
+    return data;
 }
 
-// ---- Pre-generar datos para cada símbolo ----
-const CANDLE_DATA = {};
-WATCHLIST.forEach(stock => {
-  // Usar precio actual como semilla, generar 365 días de historial
-  const seed = stock.price * (0.85 + Math.random() * 0.15);
-  CANDLE_DATA[stock.symbol] = generateCandleData(seed, 365, 0.022, 0.0004);
+// Cache de datos por símbolo y timeframe
+const MARKET_DATA = {};
+
+function getMarketData(symbol, timeframe = '1D') {
+    const key = `${symbol}_${timeframe}`;
+    if (!MARKET_DATA[key]) {
+        let periods, intervalMins;
+        switch (timeframe) {
+            case '1D': periods = 78;  intervalMins = 5;    break; // 5-min candles
+            case '1W': periods = 105; intervalMins = 60;   break; // 1h candles
+            case '1M': periods = 120; intervalMins = 240;  break; // 4h candles
+            case '3M': periods = 90;  intervalMins = 1440; break; // daily
+            case '1Y': periods = 252; intervalMins = 1440; break; // daily
+            default:   periods = 78;  intervalMins = 5;
+        }
+        MARKET_DATA[key] = generateOHLCV(symbol, periods, intervalMins);
+    }
+    return MARKET_DATA[key];
+}
+
+// Precios actuales en tiempo real (simulados)
+const currentPrices = { ...BASE_PRICES };
+const priceChanges = {};
+const priceChangePct = {};
+
+Object.keys(BASE_PRICES).forEach(sym => {
+    const prev = BASE_PRICES[sym] * (0.97 + Math.random() * 0.06);
+    currentPrices[sym] = BASE_PRICES[sym];
+    priceChanges[sym] = currentPrices[sym] - prev;
+    priceChangePct[sym] = (priceChanges[sym] / prev) * 100;
 });
 
-// ---- Calcular Media Móvil Simple ----
-function calcSMA(candles, period) {
-  const result = [];
-  for (let i = 0; i < candles.length; i++) {
-    if (i < period - 1) { result.push(null); continue; }
-    let sum = 0;
-    for (let j = i - period + 1; j <= i; j++) sum += candles[j].close;
-    result.push({ time: candles[i].time, value: parseFloat((sum / period).toFixed(2)) });
-  }
-  return result.filter(d => d !== null);
+// Simula actualizaciones de precio
+function simulatePriceTick() {
+    Object.keys(currentPrices).forEach(sym => {
+        const vol = sym === 'TSLA' ? 0.003 : 0.0015;
+        const change = (Math.random() - 0.499) * vol * currentPrices[sym];
+        const prevPrice = currentPrices[sym];
+        currentPrices[sym] = Math.max(currentPrices[sym] + change, BASE_PRICES[sym] * 0.5);
+        const dayOpen = BASE_PRICES[sym] * 0.99;
+        priceChanges[sym] = currentPrices[sym] - dayOpen;
+        priceChangePct[sym] = (priceChanges[sym] / dayOpen) * 100;
+
+        // Actualiza la última vela del día
+        const dayData = getMarketData(sym, '1D');
+        if (dayData.length > 0) {
+            const lastCandle = dayData[dayData.length - 1];
+            lastCandle.close = currentPrices[sym];
+            lastCandle.high = Math.max(lastCandle.high, currentPrices[sym]);
+            lastCandle.low = Math.min(lastCandle.low, currentPrices[sym]);
+        }
+    });
 }
 
-// ---- Calcular Bandas de Bollinger ----
-function calcBollinger(candles, period = 20, std = 2) {
-  const sma = calcSMA(candles, period);
-  const upper = [], lower = [], middle = [];
-
-  for (let i = period - 1; i < candles.length; i++) {
-    const slice = candles.slice(i - period + 1, i + 1).map(c => c.close);
-    const mean = slice.reduce((a,b) => a+b, 0) / period;
-    const variance = slice.reduce((a,b) => a + (b-mean)**2, 0) / period;
-    const sd = Math.sqrt(variance);
-    const t = candles[i].time;
-    upper.push({ time: t, value: parseFloat((mean + std*sd).toFixed(2)) });
-    lower.push({ time: t, value: parseFloat((mean - std*sd).toFixed(2)) });
-    middle.push({ time: t, value: parseFloat(mean.toFixed(2)) });
-  }
-  return { upper, lower, middle };
+// Calcula medias móviles
+function calcMA(data, period) {
+    const result = new Array(data.length).fill(null);
+    for (let i = period - 1; i < data.length; i++) {
+        const sum = data.slice(i - period + 1, i + 1).reduce((s, d) => s + d.close, 0);
+        result[i] = sum / period;
+    }
+    return result;
 }
 
-// ---- Calcular RSI ----
-function calcRSI(candles, period = 14) {
-  const closes = candles.map(c => c.close);
-  const gains = [], losses = [];
-  for (let i = 1; i < closes.length; i++) {
-    const diff = closes[i] - closes[i-1];
-    gains.push(diff > 0 ? diff : 0);
-    losses.push(diff < 0 ? -diff : 0);
-  }
-  if (gains.length < period) return 50;
-  const avgGain = gains.slice(-period).reduce((a,b)=>a+b,0)/period;
-  const avgLoss = losses.slice(-period).reduce((a,b)=>a+b,0)/period;
-  if (avgLoss === 0) return 100;
-  const rs = avgGain / avgLoss;
-  return parseFloat((100 - 100/(1+rs)).toFixed(1));
+// Calcula Bandas de Bollinger
+function calcBollinger(data, period = 20, multiplier = 2) {
+    const ma = calcMA(data, period);
+    const upper = new Array(data.length).fill(null);
+    const lower = new Array(data.length).fill(null);
+
+    for (let i = period - 1; i < data.length; i++) {
+        const slice = data.slice(i - period + 1, i + 1).map(d => d.close);
+        const mean = ma[i];
+        const std = Math.sqrt(slice.reduce((s, v) => s + (v - mean) ** 2, 0) / period);
+        upper[i] = mean + multiplier * std;
+        lower[i] = mean - multiplier * std;
+    }
+    return { upper, lower, middle: ma };
 }
 
-// ---- Calcular MACD ----
-function calcMACD(candles) {
-  function ema(data, period) {
-    const k = 2/(period+1);
-    let emaVal = data[0];
-    return data.map(d => { emaVal = d*k + emaVal*(1-k); return parseFloat(emaVal.toFixed(2)); });
-  }
-  const closes = candles.map(c => c.close);
-  const ema12 = ema(closes, 12);
-  const ema26 = ema(closes, 26);
-  const macdLine = ema12.map((v,i) => v - ema26[i]);
-  const signal = ema(macdLine, 9);
-  const histogram = macdLine.map((v,i) => parseFloat((v - signal[i]).toFixed(2)));
+// Calcula RSI
+function calcRSI(data, period = 14) {
+    const result = new Array(data.length).fill(null);
+    let avgGain = 0, avgLoss = 0;
 
-  return candles.slice(-30).map((c,i) => {
-    const idx = candles.length - 30 + i;
-    return {
-      time: c.time,
-      macd: macdLine[idx],
-      signal: signal[idx],
-      histogram: histogram[idx]
-    };
-  });
+    for (let i = 1; i <= period; i++) {
+        const change = data[i].close - data[i - 1].close;
+        if (change > 0) avgGain += change; else avgLoss -= change;
+    }
+    avgGain /= period;
+    avgLoss /= period;
+    result[period] = avgLoss === 0 ? 100 : 100 - (100 / (1 + avgGain / avgLoss));
+
+    for (let i = period + 1; i < data.length; i++) {
+        const change = data[i].close - data[i - 1].close;
+        const gain = change > 0 ? change : 0;
+        const loss = change < 0 ? -change : 0;
+        avgGain = (avgGain * (period - 1) + gain) / period;
+        avgLoss = (avgLoss * (period - 1) + loss) / period;
+        result[i] = avgLoss === 0 ? 100 : 100 - (100 / (1 + avgGain / avgLoss));
+    }
+    return result;
 }
 
-// ---- Filtrar datos por período ----
-function filterByPeriod(candles, period) {
-  const now = candles[candles.length - 1].time;
-  const ms = { '1D': 1, '1W': 7, '1M': 30, '3M': 90, '1Y': 365 };
-  const days = ms[period] || 365;
-  const cutoff = now - days * 86400;
-  return candles.filter(c => c.time >= cutoff);
+// Formatea número como moneda
+function formatCurrency(val, decimals = 2) {
+    return '$' + Math.abs(val).toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 }
 
-// ---- Noticias de ejemplo ----
-const NEWS_DATA = {
-  AAPL: [
-    { title: 'Apple supera expectativas de ingresos en el Q4 con récord en ventas de iPhone 15', time: 'hace 2h', sentiment: 'bullish' },
-    { title: 'Analistas elevan precio objetivo de Apple a $210 tras resultados trimestrales', time: 'hace 4h', sentiment: 'bullish' },
-    { title: 'Apple planea lanzar nuevas funciones de IA en iOS 18 para 2025', time: 'hace 1d', sentiment: 'neutral' },
-  ],
-  MSFT: [
-    { title: 'Microsoft reporta crecimiento del 17% en ingresos de Azure en el último trimestre', time: 'hace 1h', sentiment: 'bullish' },
-    { title: 'Reguladores europeos investigan acuerdo de OpenAI con Microsoft', time: 'hace 6h', sentiment: 'bearish' },
-    { title: 'Copilot de Microsoft llega a más de 600 millones de dispositivos', time: 'hace 2d', sentiment: 'bullish' },
-  ],
-  NVDA: [
-    { title: 'NVIDIA bate récord histórico con ventas de chips H100 para centros de datos de IA', time: 'hace 30m', sentiment: 'bullish' },
-    { title: 'Jensen Huang anuncia la próxima generación de GPUs Blackwell para 2025', time: 'hace 3h', sentiment: 'bullish' },
-    { title: 'Tensiones con China podrían limitar exportaciones de chips avanzados de NVIDIA', time: 'hace 1d', sentiment: 'bearish' },
-  ],
-  TSLA: [
-    { title: 'Tesla recorta precios por tercera vez este año ante caída de la demanda en Europa', time: 'hace 1h', sentiment: 'bearish' },
-    { title: 'Elon Musk confirma retraso en el lanzamiento del Cybertruck en mercados internacionales', time: 'hace 5h', sentiment: 'bearish' },
-    { title: 'Tesla entrega 466.000 vehículos en el Q3, superando estimaciones', time: 'hace 2d', sentiment: 'bullish' },
-  ],
-  DEFAULT: [
-    { title: 'La Fed mantiene tasas de interés estables; mercados reaccionan positivamente', time: 'hace 2h', sentiment: 'bullish' },
-    { title: 'S&P 500 alcanza nuevo máximo histórico impulsado por sector tecnológico', time: 'hace 4h', sentiment: 'bullish' },
-    { title: 'Datos de empleo de EE.UU. muestran creación de 185.000 empleos en octubre', time: 'hace 1d', sentiment: 'neutral' },
-  ]
-};
+function formatVolume(vol) {
+    if (vol >= 1e9) return (vol / 1e9).toFixed(1) + 'B';
+    if (vol >= 1e6) return (vol / 1e6).toFixed(1) + 'M';
+    if (vol >= 1e3) return (vol / 1e3).toFixed(1) + 'K';
+    return vol.toString();
+}
 
-// ---- Movers del día ----
-const MOVERS = [
-  { rank: 1, symbol: 'NVDA', name: 'NVIDIA', change: +2.57, up: true },
-  { rank: 2, symbol: 'AMZN', name: 'Amazon', change: +1.83, up: true },
-  { rank: 3, symbol: 'AAPL', name: 'Apple', change: +1.26, up: true },
-  { rank: 4, symbol: 'GOOGL', name: 'Alphabet', change: +0.81, up: true },
-  { rank: 5, symbol: 'JPM',  name: 'JPMorgan', change: +0.44, up: true },
-  { rank: 6, symbol: 'TSLA', name: 'Tesla', change: -3.29, up: false },
-  { rank: 7, symbol: 'META', name: 'Meta', change: -1.57, up: false },
-  { rank: 8, symbol: 'MSFT', name: 'Microsoft', change: -0.38, up: false },
+// Lecciones educativas
+const LESSONS = [
+    {
+        id: "velas",
+        title: "🕯️ Velas Japonesas",
+        icon: "fas fa-chart-bar",
+        summary: "Aprende a leer el lenguaje más universal de los gráficos bursátiles.",
+        content: `
+            <h2>🕯️ ¿Qué son las Velas Japonesas?</h2>
+            <p>Una vela japonesa resume toda la actividad de precio en un período de tiempo en una sola figura visual.</p>
+            <div class="lesson-visual">
+                <div class="candle-demo">
+                    <div class="candle-diagram bullish">
+                        <div class="upper-wick"></div>
+                        <div class="candle-body"></div>
+                        <div class="lower-wick"></div>
+                        <div class="candle-labels">
+                            <span class="label-high">Máximo ↑</span>
+                            <span class="label-open">Apertura</span>
+                            <span class="label-close">Cierre</span>
+                            <span class="label-low">Mínimo ↓</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>Partes de una vela:</h3>
+            <ul>
+                <li><strong>Cuerpo:</strong> Va del precio de apertura al de cierre. Verde = subió. Rojo = bajó.</li>
+                <li><strong>Mecha superior:</strong> El precio más alto que alcanzó en ese período.</li>
+                <li><strong>Mecha inferior:</strong> El precio más bajo que alcanzó en ese período.</li>
+            </ul>
+            <h3>Patrones básicos:</h3>
+            <ul>
+                <li><strong>Vela alcista larga (verde):</strong> Señal de que los compradores dominaron ese período.</li>
+                <li><strong>Vela bajista larga (roja):</strong> Los vendedores tuvieron el control.</li>
+                <li><strong>Doji (cuerpo muy pequeño):</strong> Indecisión en el mercado — compradores y vendedores empataron.</li>
+            </ul>
+            <div class="lesson-tip">💡 <strong>Consejo para principiantes:</strong> No necesitas memorizar todos los patrones. Primero aprende a distinguir si las velas recientes son más verdes o más rojas para tener una idea de la tendencia.</div>
+        `
+    },
+    {
+        id: "volumen",
+        title: "📊 Volumen",
+        icon: "fas fa-chart-column",
+        summary: "El volumen te dice cuánta gente está participando. Es como el termómetro del mercado.",
+        content: `
+            <h2>📊 ¿Qué es el Volumen?</h2>
+            <p>El <strong>volumen</strong> indica cuántas acciones se compraron y vendieron en un período. Confirma la fuerza de un movimiento de precio.</p>
+            <h3>Regla de oro del volumen:</h3>
+            <ul>
+                <li><strong>Precio sube + volumen alto:</strong> Señal fuerte de alza. Muchos inversores quieren comprar.</li>
+                <li><strong>Precio sube + volumen bajo:</strong> El alza puede ser débil o temporal.</li>
+                <li><strong>Precio baja + volumen alto:</strong> Muchos están vendiendo — posible señal de caída seria.</li>
+                <li><strong>Precio baja + volumen bajo:</strong> Pocos están vendiendo. La caída puede no continuar.</li>
+            </ul>
+            <div class="lesson-tip">💡 <strong>Consejo:</strong> Siempre mira el volumen cuando veas una vela muy grande. Si el volumen es alto, el movimiento es "real". Si es bajo, podría ser un falso movimiento.</div>
+        `
+    },
+    {
+        id: "medias",
+        title: "📈 Medias Móviles",
+        icon: "fas fa-wave-square",
+        summary: "Las medias móviles suavizan el ruido y muestran la dirección real del mercado.",
+        content: `
+            <h2>📈 ¿Qué son las Medias Móviles?</h2>
+            <p>Una media móvil (MM) calcula el precio promedio de los últimos N períodos y lo dibuja como una línea suave sobre el gráfico. Elimina el "ruido" y muestra la tendencia real.</p>
+            <h3>Tipos principales:</h3>
+            <ul>
+                <li><strong>MM20 (amarilla):</strong> Promedio de los últimos 20 períodos. Muy sensible a cambios recientes. Usada para operaciones cortas.</li>
+                <li><strong>MM50 (azul):</strong> Tendencia de mediano plazo. La más usada por traders.</li>
+                <li><strong>MM200 (naranja):</strong> Tendencia de largo plazo. Si el precio está por encima = mercado alcista. Por debajo = bajista.</li>
+            </ul>
+            <h3>Golden Cross y Death Cross:</h3>
+            <ul>
+                <li><strong>Golden Cross 🌟:</strong> MM50 cruza hacia arriba la MM200 → señal alcista importante.</li>
+                <li><strong>Death Cross 💀:</strong> MM50 cruza hacia abajo la MM200 → señal bajista importante.</li>
+            </ul>
+            <div class="lesson-tip">💡 <strong>Consejo simple:</strong> Si el precio está por encima de la MM200 y la MM50, generalmente es señal de que la tendencia es alcista (el mercado sube).</div>
+        `
+    },
+    {
+        id: "rsi",
+        title: "⚡ RSI (Índice de Fuerza Relativa)",
+        icon: "fas fa-tachometer-alt",
+        summary: "El RSI te dice si una acción está 'cara' o 'barata' relativamente.",
+        content: `
+            <h2>⚡ RSI — Índice de Fuerza Relativa</h2>
+            <p>El RSI mide qué tan rápido y fuerte se mueve el precio. Va de 0 a 100 y te ayuda a detectar si una acción está sobrecomprada o sobrevendida.</p>
+            <h3>Zonas clave:</h3>
+            <ul>
+                <li><strong>RSI > 70 (sobrecomprado):</strong> La acción subió muy rápido y podría corregir hacia abajo pronto.</li>
+                <li><strong>RSI entre 40-60 (zona neutra):</strong> El precio se mueve de forma normal.</li>
+                <li><strong>RSI < 30 (sobrevendido):</strong> La acción bajó mucho y podría rebotar hacia arriba.</li>
+            </ul>
+            <div class="lesson-tip">💡 <strong>Consejo para principiantes:</strong> El RSI no garantiza nada, pero cuando está por debajo de 30, muchos traders lo ven como una oportunidad de compra. Por encima de 70, consideran tomar ganancias o vender.</div>
+        `
+    },
+    {
+        id: "senales",
+        title: "🔔 Señales de Trading",
+        icon: "fas fa-bell",
+        summary: "Cómo combinar indicadores para tomar decisiones más informadas.",
+        content: `
+            <h2>🔔 Señales de Trading</h2>
+            <p>Una <strong>señal de trading</strong> es una indicación basada en análisis técnico que sugiere comprar o vender. Nunca son garantía, pero ayudan a tomar decisiones más informadas.</p>
+            <h3>Señales de COMPRA más comunes:</h3>
+            <ul>
+                <li>Precio cruza hacia arriba la MM50 o MM200</li>
+                <li>RSI sale de zona sobrevendida (sube de 30)</li>
+                <li>Golden Cross (MM50 cruza MM200 hacia arriba)</li>
+                <li>Precio rompe resistencia con volumen alto</li>
+            </ul>
+            <h3>Señales de VENTA más comunes:</h3>
+            <ul>
+                <li>Precio cae por debajo de MM50 o MM200</li>
+                <li>RSI sale de zona sobrecomprada (baja de 70)</li>
+                <li>Death Cross (MM50 cruza MM200 hacia abajo)</li>
+            </ul>
+            <div class="lesson-tip">💡 <strong>Regla clave:</strong> Una sola señal no es suficiente. Lo ideal es que 2 o 3 indicadores apunten en la misma dirección antes de actuar.</div>
+        `
+    },
+    {
+        id: "stoploss",
+        title: "🛑 Stop Loss",
+        icon: "fas fa-shield-alt",
+        summary: "Tu seguro contra pérdidas grandes. Aprende a proteger tu capital.",
+        content: `
+            <h2>🛑 Stop Loss — Tu Red de Seguridad</h2>
+            <p>Un <strong>Stop Loss</strong> es una orden automática que vende tu posición si el precio cae a cierto nivel. Te protege de pérdidas mayores de las que puedes asumir.</p>
+            <h3>Ejemplo práctico:</h3>
+            <p>Compras AAPL a <strong>$175</strong>. Decides que lo máximo que puedes perder es el 5%. Pones stop loss en <strong>$166.25</strong>. Si cae a ese precio, se vende automáticamente.</p>
+            <h3>¿Dónde poner el stop loss?</h3>
+            <ul>
+                <li>Para principiantes: entre 5% y 10% por debajo del precio de compra.</li>
+                <li>Avanzado: justo por debajo de un soporte técnico clave.</li>
+            </ul>
+            <div class="lesson-tip">💡 <strong>Regla de oro:</strong> Nunca muevas el stop loss hacia abajo para "aguantar". El stop loss existe para protegerte, no para que sigas perdiendo.</div>
+        `
+    },
+    {
+        id: "takeprofit",
+        title: "🎯 Take Profit",
+        icon: "fas fa-bullseye",
+        summary: "Define tu objetivo de ganancia y asegura tus ganancias automáticamente.",
+        content: `
+            <h2>🎯 Take Profit — Asegura tus Ganancias</h2>
+            <p>Un <strong>Take Profit</strong> es una orden que vende automáticamente cuando el precio alcanza tu objetivo de ganancia. Evita que la avaricia te haga perder ganancias ya ganadas.</p>
+            <h3>Ejemplo práctico:</h3>
+            <p>Compras NVDA a <strong>$480</strong>. Esperas un alza del 10%. Pones take profit en <strong>$528</strong>. Cuando llegue ahí, se vende y aseguras la ganancia.</p>
+            <h3>Relación Riesgo/Recompensa:</h3>
+            <ul>
+                <li>Para principiantes: el take profit debería ser al menos el doble del stop loss.</li>
+                <li>Ejemplo: Stop Loss = 5% → Take Profit = 10% (ratio 1:2).</li>
+            </ul>
+            <div class="lesson-tip">💡 <strong>Consejo:</strong> Un ratio riesgo/recompensa de 1:2 significa que aunque pierdas más veces de las que ganas, podrías seguir siendo rentable.</div>
+        `
+    },
+    {
+        id: "watchlist",
+        title: "👁️ Watchlist — Lista de Seguimiento",
+        icon: "fas fa-eye",
+        summary: "Cómo usar una watchlist para monitorear múltiples activos eficientemente.",
+        content: `
+            <h2>👁️ Watchlist — Lista de Seguimiento</h2>
+            <p>Una <strong>watchlist</strong> es tu lista personal de activos que estás monitoreando. No necesitas tener acciones de todos; simplemente los sigues para encontrar oportunidades.</p>
+            <h3>¿Cómo usarla?</h3>
+            <ul>
+                <li>Agrega los activos que te interesan y revísalos regularmente.</li>
+                <li>Observa cuáles están subiendo o bajando más que el mercado general.</li>
+                <li>Cuando veas una señal técnica en uno, investiga más antes de actuar.</li>
+            </ul>
+            <h3>Tips para principiantes:</h3>
+            <ul>
+                <li>Empieza con 5-10 acciones, no con 50. Menos es más.</li>
+                <li>Prefiere empresas que conoces y entiendes.</li>
+                <li>Diversifica sectores: tech, salud, consumo, financiero.</li>
+            </ul>
+            <div class="lesson-tip">💡 <strong>Consejo:</strong> Un error común de principiantes es tener demasiados activos en la watchlist. Es mejor conocer bien 5 empresas que seguir superficialmente 50.</div>
+        `
+    }
 ];
-
-// ---- Contenido educativo ----
-const LESSONS = {
-  candles: {
-    title: '📊 Velas Japonesas',
-    content: `
-      <h3><i class="fas fa-history"></i> ¿Qué son las velas japonesas?</h3>
-      <p>Las velas japonesas son una forma de representar gráficamente el precio de una acción durante un período de tiempo (un día, una hora, etc.). Fueron inventadas por comerciantes japoneses de arroz en el siglo XVII y hoy son el estándar global en análisis técnico.</p>
-
-      <h3><i class="fas fa-cube"></i> Anatomía de una vela</h3>
-      <p>Cada vela contiene 4 datos clave:</p>
-      <ul>
-        <li><strong>Apertura (Open)</strong>: El precio al que comenzó a negociarse la acción en ese período.</li>
-        <li><strong>Cierre (Close)</strong>: El precio al que terminó de negociarse.</li>
-        <li><strong>Máximo (High)</strong>: El precio más alto alcanzado.</li>
-        <li><strong>Mínimo (Low)</strong>: El precio más bajo alcanzado.</li>
-      </ul>
-
-      <div class="candle-diagram">
-        <div class="candle-ex">
-          <svg class="candle-svg" width="60" height="120" viewBox="0 0 60 120">
-            <line x1="30" y1="10" x2="30" y2="30" stroke="#3fb950" stroke-width="2"/>
-            <rect x="15" y="30" width="30" height="60" fill="#3fb950" rx="2"/>
-            <line x1="30" y1="90" x2="30" y2="110" stroke="#3fb950" stroke-width="2"/>
-            <text x="30" y="8" text-anchor="middle" fill="#8b949e" font-size="9">Máximo</text>
-            <text x="30" y="118" text-anchor="middle" fill="#8b949e" font-size="9">Mínimo</text>
-          </svg>
-          <div class="edu-card-label" style="color:var(--positive);font-weight:700">Vela Alcista ▲</div>
-          <div style="font-size:0.72rem;color:var(--text-muted)">Cierre > Apertura</div>
-        </div>
-        <div style="flex:1;padding:0 20px;font-size:0.8rem;color:var(--text-secondary)">
-          <p><strong style="color:var(--positive)">Vela Verde (Alcista):</strong> El precio subió. El cuerpo de la vela va desde la apertura (abajo) hasta el cierre (arriba).</p>
-          <p style="margin-top:10px"><strong style="color:var(--negative)">Vela Roja (Bajista):</strong> El precio bajó. El cuerpo va desde la apertura (arriba) hasta el cierre (abajo).</p>
-          <p style="margin-top:10px">Las líneas delgadas que sobresalen se llaman <strong>mechas o sombras</strong> y muestran el rango total de precios.</p>
-        </div>
-        <div class="candle-ex">
-          <svg class="candle-svg" width="60" height="120" viewBox="0 0 60 120">
-            <line x1="30" y1="10" x2="30" y2="30" stroke="#f85149" stroke-width="2"/>
-            <rect x="15" y="30" width="30" height="60" fill="#f85149" rx="2"/>
-            <line x1="30" y1="90" x2="30" y2="110" stroke="#f85149" stroke-width="2"/>
-            <text x="30" y="8" text-anchor="middle" fill="#8b949e" font-size="9">Máximo</text>
-            <text x="30" y="118" text-anchor="middle" fill="#8b949e" font-size="9">Mínimo</text>
-          </svg>
-          <div style="color:var(--negative);font-weight:700">Vela Bajista ▼</div>
-          <div style="font-size:0.72rem;color:var(--text-muted)">Cierre < Apertura</div>
-        </div>
-      </div>
-
-      <div class="edu-highlight tip">
-        <strong>💡 Consejo para principiantes:</strong> No intentes predecir el precio con una sola vela. Lo importante es identificar patrones de varias velas y combinar con el volumen y tendencia general.
-      </div>
-
-      <h3><i class="fas fa-shapes"></i> Patrones importantes</h3>
-      <ul>
-        <li><strong>Doji:</strong> Apertura y cierre casi iguales. Señal de indecisión del mercado.</li>
-        <li><strong>Martillo (Hammer):</strong> Mecha larga abajo, cuerpo pequeño arriba. Posible reversión alcista.</li>
-        <li><strong>Envolvente alcista:</strong> Una vela verde que "envuelve" a la roja anterior. Señal de compra.</li>
-        <li><strong>Estrella de la mañana:</strong> Tres velas (roja, doji, verde). Señal de posible giro al alza.</li>
-      </ul>
-
-      <div class="edu-highlight warn">
-        <strong>⚠️ Recuerda:</strong> Los patrones de velas son señales, no certezas. Siempre confirma con otros indicadores como el volumen y las medias móviles.
-      </div>
-    `
-  },
-  volume: {
-    title: '📊 Volumen de Negociación',
-    content: `
-      <h3><i class="fas fa-chart-bar"></i> ¿Qué es el volumen?</h3>
-      <p>El volumen es la cantidad de acciones que se negocian (compran y venden) durante un período de tiempo. Es uno de los indicadores más importantes del mercado porque muestra el <strong>nivel de interés o convicción</strong> detrás de un movimiento de precio.</p>
-
-      <h3><i class="fas fa-balance-scale"></i> ¿Por qué importa el volumen?</h3>
-      <ul>
-        <li><strong>Alto volumen + precio sube:</strong> Señal alcista fuerte. Hay muchos compradores convencidos.</li>
-        <li><strong>Alto volumen + precio baja:</strong> Señal bajista fuerte. Hay muchos vendedores convencidos.</li>
-        <li><strong>Bajo volumen + precio sube:</strong> Señal débil. El movimiento puede revertirse.</li>
-        <li><strong>Bajo volumen + precio baja:</strong> La caída no tiene mucha convicción, puede ser temporal.</li>
-      </ul>
-
-      <div class="edu-highlight tip">
-        <strong>💡 Regla de oro:</strong> "El volumen confirma o niega el precio." Si el precio sube pero el volumen cae, ojo, ¡la tendencia puede ser falsa!
-      </div>
-
-      <h3><i class="fas fa-search"></i> Cómo leer las barras de volumen</h3>
-      <p>En el gráfico, verás barras verticales debajo del gráfico de velas. Cada barra corresponde a la misma vela del gráfico principal:</p>
-      <ul>
-        <li><strong>Barra verde:</strong> El precio cerró al alza ese día.</li>
-        <li><strong>Barra roja:</strong> El precio cerró a la baja ese día.</li>
-        <li><strong>Altura de la barra:</strong> Cuanto más alta, más volumen (más actividad).</li>
-      </ul>
-
-      <h3><i class="fas fa-exclamation-triangle"></i> Señales de alerta</h3>
-      <ul>
-        <li><strong>Volumen inusualmente alto:</strong> Puede indicar noticias importantes, resultados trimestrales o eventos especiales.</li>
-        <li><strong>Spike de volumen:</strong> Un pico de volumen puede marcar el inicio o fin de una tendencia.</li>
-      </ul>
-
-      <div class="edu-highlight">
-        <strong>📖 Ejemplo práctico:</strong> Si Apple (AAPL) sube un 3% en un día con el doble del volumen promedio, es una señal mucho más confiable que si subiera el mismo 3% con la mitad del volumen habitual.
-      </div>
-    `
-  },
-  ma: {
-    title: '📈 Medias Móviles (MM)',
-    content: `
-      <h3><i class="fas fa-wave-square"></i> ¿Qué es una Media Móvil?</h3>
-      <p>Una media móvil es el <strong>precio promedio de una acción durante un número determinado de días</strong>. Se llama "móvil" porque se recalcula cada día usando los días más recientes.</p>
-      <p>Por ejemplo, la <strong>Media Móvil de 20 días (MM20)</strong> muestra el precio promedio de los últimos 20 días de negociación.</p>
-
-      <h3><i class="fas fa-palette"></i> Las 3 medias más usadas</h3>
-      <ul>
-        <li><strong style="color:#f0e68c">MM20 (amarilla):</strong> Tendencia de corto plazo. Reactiva a cambios recientes.</li>
-        <li><strong style="color:#87ceeb">MM50 (azul claro):</strong> Tendencia de mediano plazo. La más seguida por traders.</li>
-        <li><strong style="color:#ff8c00">MM200 (naranja):</strong> Tendencia de largo plazo. La usan los inversores institucionales.</li>
-      </ul>
-
-      <h3><i class="fas fa-crosshairs"></i> Señales de compra y venta</h3>
-      <ul>
-        <li><strong>Precio > MM200:</strong> La acción está en tendencia alcista de largo plazo.</li>
-        <li><strong>Precio < MM200:</strong> La acción está en tendencia bajista de largo plazo.</li>
-        <li><strong>Golden Cross ✨:</strong> La MM50 cruza por encima de la MM200. Señal muy alcista.</li>
-        <li><strong>Death Cross 💀:</strong> La MM50 cruza por debajo de la MM200. Señal muy bajista.</li>
-      </ul>
-
-      <div class="edu-highlight tip">
-        <strong>💡 Estrategia simple para principiantes:</strong> Compra cuando el precio está por encima de la MM20 Y la MM50. Vende (o espera) cuando esté por debajo de ambas.
-      </div>
-
-      <h3><i class="fas fa-shield-alt"></i> Las medias como soporte y resistencia</h3>
-      <p>Las medias móviles también actúan como <strong>niveles de soporte</strong> (pisos) cuando el precio baja hacia ellas, o como <strong>resistencia</strong> (techos) cuando el precio intenta superarlas.</p>
-
-      <div class="edu-highlight warn">
-        <strong>⚠️ Limitación:</strong> Las medias móviles son indicadores rezagados (lagging). Confirman tendencias que ya ocurrieron, no predicen el futuro. Úsalas para confirmar, no para anticipar.
-      </div>
-    `
-  },
-  rsi: {
-    title: '⚡ RSI — Índice de Fuerza Relativa',
-    content: `
-      <h3><i class="fas fa-tachometer-alt"></i> ¿Qué es el RSI?</h3>
-      <p>El RSI (Relative Strength Index) es un oscilador que mide la <strong>velocidad y magnitud de los cambios de precio</strong> en una escala de 0 a 100. Fue creado por J. Welles Wilder en 1978 y es uno de los indicadores técnicos más utilizados en el mundo.</p>
-
-      <h3><i class="fas fa-ruler-horizontal"></i> Lectura del RSI</h3>
-      <ul>
-        <li><strong style="color:var(--negative)">RSI > 70: Sobrecompra</strong> — La acción ha subido muy rápido. Puede estar cara. Posible corrección a la vista.</li>
-        <li><strong style="color:var(--positive)">RSI < 30: Sobreventa</strong> — La acción ha bajado mucho. Puede estar barata. Posible rebote.</li>
-        <li><strong style="color:var(--warning)">RSI entre 30 y 70:</strong> Zona neutral. Sin señal clara.</li>
-        <li><strong>RSI = 50:</strong> Equilibrio entre compradores y vendedores.</li>
-      </ul>
-
-      <div class="edu-highlight tip">
-        <strong>💡 Uso práctico:</strong> Cuando el RSI supera 70, considera reducir posición o no comprar. Cuando baja de 30, puede ser una oportunidad de compra (pero confirma con otros indicadores).
-      </div>
-
-      <h3><i class="fas fa-bezier-curve"></i> Divergencias del RSI</h3>
-      <p>Una de las señales más poderosas del RSI son las <strong>divergencias</strong>:</p>
-      <ul>
-        <li><strong>Divergencia bajista:</strong> El precio hace un nuevo máximo pero el RSI hace un máximo más bajo. Señal de debilidad.</li>
-        <li><strong>Divergencia alcista:</strong> El precio hace un nuevo mínimo pero el RSI hace un mínimo más alto. Señal de fortaleza oculta.</li>
-      </ul>
-
-      <div class="edu-highlight">
-        <strong>📖 Ejemplo:</strong> Si Tesla (TSLA) llega a $300 y el RSI está en 78 (sobrecompra), es posible que la acción corrija en los próximos días, incluso si la noticia del día fue positiva.
-      </div>
-
-      <div class="edu-highlight warn">
-        <strong>⚠️ Cuidado:</strong> En tendencias muy fuertes, el RSI puede permanecer en sobrecompra (>70) durante semanas. No vendas solo por el RSI en una tendencia alcista fuerte.
-      </div>
-    `
-  },
-  macd: {
-    title: '🔄 MACD — Convergencia/Divergencia de Medias',
-    content: `
-      <h3><i class="fas fa-sliders-h"></i> ¿Qué es el MACD?</h3>
-      <p>El MACD (Moving Average Convergence Divergence) es un indicador de tendencia y momentum que muestra la <strong>relación entre dos medias móviles exponenciales</strong> del precio. Fue desarrollado por Gerald Appel en 1979.</p>
-
-      <h3><i class="fas fa-layer-group"></i> Componentes del MACD</h3>
-      <ul>
-        <li><strong>Línea MACD (azul):</strong> Diferencia entre la EMA12 y la EMA26 (medias exponenciales de 12 y 26 días).</li>
-        <li><strong>Línea de Señal (naranja):</strong> Media móvil exponencial de 9 días de la línea MACD.</li>
-        <li><strong>Histograma:</strong> Diferencia entre la línea MACD y la línea de señal. Barras verdes = MACD > señal. Barras rojas = MACD < señal.</li>
-      </ul>
-
-      <h3><i class="fas fa-exchange-alt"></i> Señales de trading</h3>
-      <ul>
-        <li><strong>Cruce alcista:</strong> La línea MACD cruza por encima de la señal. Señal de compra.</li>
-        <li><strong>Cruce bajista:</strong> La línea MACD cruza por debajo de la señal. Señal de venta.</li>
-        <li><strong>Cruce con la línea cero:</strong> Si el MACD cruza de negativo a positivo, confirma tendencia alcista.</li>
-        <li><strong>Histograma verde y creciendo:</strong> Momentum alcista aumentando.</li>
-        <li><strong>Histograma rojo y creciendo:</strong> Momentum bajista aumentando.</li>
-      </ul>
-
-      <div class="edu-highlight tip">
-        <strong>💡 Estrategia clásica:</strong> Compra cuando el MACD cruza por encima de la línea de señal Y el cruce ocurre por debajo de la línea cero (zona de sobreventa). Esto combina momentum y valor.
-      </div>
-
-      <div class="edu-highlight warn">
-        <strong>⚠️ Limitación:</strong> El MACD es un indicador rezagado. En mercados laterales (sin tendencia) genera muchas señales falsas. Funciona mejor en mercados con tendencia clara.
-      </div>
-    `
-  },
-  watchlist: {
-    title: '⭐ Lista de Seguimiento (Watchlist)',
-    content: `
-      <h3><i class="fas fa-star"></i> ¿Qué es una Lista de Seguimiento?</h3>
-      <p>Una lista de seguimiento (watchlist) es tu <strong>radar personal del mercado</strong>. Es una lista de acciones que has seleccionado para monitorear regularmente, aunque no las hayas comprado todavía.</p>
-
-      <h3><i class="fas fa-tasks"></i> Para qué sirve</h3>
-      <ul>
-        <li><strong>Seguir el rendimiento</strong> de acciones que te interesan sin necesidad de buscarlas cada vez.</li>
-        <li><strong>Identificar oportunidades:</strong> Cuando una acción de tu lista llega a un precio atractivo.</li>
-        <li><strong>Comparar comportamientos:</strong> Ver qué sectores suben o bajan en el mismo día.</li>
-        <li><strong>Preparar decisiones</strong> antes de invertir, estudiando la acción durante días o semanas.</li>
-      </ul>
-
-      <h3><i class="fas fa-info-circle"></i> Datos que ves en cada fila</h3>
-      <ul>
-        <li><strong>Símbolo (ticker):</strong> Código corto de la empresa (ej: AAPL = Apple, TSLA = Tesla).</li>
-        <li><strong>Precio actual:</strong> El último precio al que se negoció la acción.</li>
-        <li><strong>Cambio (% y $):</strong> Cuánto subió o bajó respecto al cierre del día anterior.</li>
-        <li><strong style="color:var(--positive)">Verde:</strong> La acción está subiendo hoy.</li>
-        <li><strong style="color:var(--negative)">Rojo:</strong> La acción está bajando hoy.</li>
-      </ul>
-
-      <div class="edu-highlight tip">
-        <strong>💡 Consejo:</strong> Empieza con 5-10 empresas que conozcas bien como consumidor (Apple, Amazon, Coca-Cola, etc.). Es más fácil entender el negocio y seguir sus noticias.
-      </div>
-
-      <h3><i class="fas fa-chart-line"></i> Estadísticas importantes</h3>
-      <ul>
-        <li><strong>P/E (Price/Earnings):</strong> Cuánto pagas por cada dólar de ganancia. Menor = más barato (relativo).</li>
-        <li><strong>Capitalización bursátil:</strong> Valor total de la empresa en el mercado.</li>
-        <li><strong>Dividendo:</strong> Pago periódico a accionistas. Ideal para inversión a largo plazo.</li>
-        <li><strong>Beta:</strong> Volatilidad relativa al mercado. Beta > 1 = más volátil que el mercado.</li>
-      </ul>
-
-      <div class="edu-highlight">
-        <strong>📖 Diferencia entre seguir y comprar:</strong> Puedes seguir una acción en tu watchlist durante meses antes de comprar. Observar su comportamiento te ayuda a entender cuándo es un buen momento para entrar.
-      </div>
-    `
-  },
-  signal: {
-    title: '🎯 Señal General de Trading',
-    content: `
-      <h3><i class="fas fa-traffic-light"></i> ¿Qué es la Señal General?</h3>
-      <p>La señal general es un <strong>resumen automatizado</strong> que combina múltiples indicadores técnicos para darte una orientación sobre el sentimiento actual del mercado para esa acción: si los indicadores apuntan a compra, venta, o neutralidad.</p>
-
-      <div class="edu-highlight warn">
-        <strong>⚠️ Advertencia importante:</strong> La señal general es una herramienta educativa y orientativa, NO es asesoramiento financiero. Las señales técnicas pueden fallar. Siempre investiga por tu cuenta y, si es posible, consulta a un asesor financiero certificado.
-      </div>
-
-      <h3><i class="fas fa-calculator"></i> Cómo se calcula</h3>
-      <p>La señal combina:</p>
-      <ul>
-        <li><strong>Posición vs Medias Móviles:</strong> ¿Está el precio por encima o por debajo de las MM20, MM50 y MM200?</li>
-        <li><strong>RSI:</strong> ¿Está el RSI en zona de compra (< 50) o venta (> 50)?</li>
-        <li><strong>MACD:</strong> ¿La línea MACD está por encima o por debajo de la señal?</li>
-        <li><strong>Volumen:</strong> ¿Confirma el volumen el movimiento del precio?</li>
-      </ul>
-
-      <h3><i class="fas fa-bar-chart"></i> Interpretación</h3>
-      <ul>
-        <li><strong style="color:var(--positive)">COMPRA fuerte (75-100%):</strong> La mayoría de indicadores apuntan al alza. Momento positivo.</li>
-        <li><strong style="color:var(--positive)">COMPRA (55-75%):</strong> Más indicadores alcistas que bajistas.</li>
-        <li><strong style="color:var(--text-secondary)">NEUTRAL (45-55%):</strong> Sin dirección clara. Esperar.</li>
-        <li><strong style="color:var(--negative)">VENTA (25-45%):</strong> Más indicadores bajistas que alcistas.</li>
-        <li><strong style="color:var(--negative)">VENTA fuerte (0-25%):</strong> La mayoría de indicadores apuntan a la baja.</li>
-      </ul>
-
-      <div class="edu-highlight tip">
-        <strong>💡 Para principiantes:</strong> Nunca tomes una decisión de inversión basándote solo en la señal técnica. Combínala siempre con análisis fundamental (¿es buena empresa?), noticias recientes y tu horizonte temporal de inversión.
-      </div>
-    `
-  }
-};
-
-const LESSON_ORDER = ['candles', 'volume', 'ma', 'rsi', 'macd', 'watchlist', 'signal'];
